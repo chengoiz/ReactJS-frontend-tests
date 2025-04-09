@@ -54,6 +54,25 @@ class HeaderPage {
     getSearchInput() {
       return cy.get('input[type="search"]');
     }
-  }
+
+    getSearchResultTitles() {
+      return cy.get('.DocSearch-Hit-title');
+    }
+
+    typeInSearchInput(text) {
+      return this.getSearchInput().should('be.visible').type(text);
+    }
+
+    assertSearchHasResultsContaining(term) {
+      this.getSearchResultTitles()
+        .should('exist')
+        .then(($titles) => {
+          const hasMatch = [...$titles].some((el) =>
+            el.textContent.toLowerCase().includes(term.toLowerCase())
+          );
+          expect(hasMatch).to.be.true;
+        });
+    }
+}
   
-  export const headerPage = new HeaderPage()
+export const headerPage = new HeaderPage()
