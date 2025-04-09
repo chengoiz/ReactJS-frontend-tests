@@ -1,0 +1,23 @@
+{
+  "name": "reactjs-frontend-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chengoiz/ReactJS-frontend-tests.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chengoiz/ReactJS-frontend-tests/issues"
+  },
+  "homepage": "https://github.com/chengoiz/ReactJS-frontend-tests#readme",
+  "devDependencies": {
+    "cypress": "^14.3.0"
+  }
+}
