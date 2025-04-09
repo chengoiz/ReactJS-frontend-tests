@@ -128,7 +128,7 @@ describe('Header Component Tests', () => {
   
           it('opens the search input when clicking the search icon', () => {
             headerPage.getSearchButton().click()
-            cy.get('input[type="search"]').should('be.visible')
+            getSearchInput().should('be.visible')
           })
         })
   
@@ -145,12 +145,12 @@ describe('Header Component Tests', () => {
           })
   
           it('performs a search and shows relevant results', () => {
-            cy.get('input[type="search"]')
+            getSearchInput()
               .should('be.visible')
               .type('hello')
               .should('have.value', 'hello')
   
-            cy.get('input[type="search"]').click()
+              getSearchInput().click()
   
             cy.get('.DocSearch-Hit-title')
               .should('exist')
@@ -163,12 +163,12 @@ describe('Header Component Tests', () => {
           })
 
           it('performs a search and shows relevant results', () => {
-            cy.get('input[type="search"]')
+            getSearchInput()
               .should('be.visible')
               .type('{enter}')
               .should('have.value', '')
   
-            cy.get('input[type="search"]').click()
+              getSearchInput().click()
   
             cy.get('.DocSearch-Hit-title')
               .should('not.exist')
